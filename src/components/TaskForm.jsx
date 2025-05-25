@@ -34,54 +34,37 @@ const TaskForm = () => {
   };
 
   return (
-    <div className="mb-8">
-      <div className="relative">
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-2">
-          <div className="relative flex-1 group">
-            <input 
-              type="text"
-              placeholder="What sparks your productivity today?" 
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter') {
-                  e.preventDefault();
-                  handleSubmit(e);
-                }
-              }}
-              className="w-full px-4 py-3 sm:py-4 text-base sm:text-lg bg-white/80 backdrop-blur-sm border-2 border-gray-200 rounded-xl focus:border-orange-400 focus:ring-4 focus:ring-orange-100 transition-all duration-300 ease-in-out placeholder-gray-400 hover:border-gray-300 focus:outline-none shadow-sm hover:shadow-md focus:shadow-lg"
-              disabled={isAdding}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-yellow-400/10 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-          
-          <button 
-            className={`px-6 py-3 sm:py-4 sm:px-8 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-semibold rounded-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-orange-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none ${isAdding ? 'animate-pulse' : ''}`}
-            onClick={handleButtonClick}
-            disabled={isAdding || !text.trim()}
-          >
-            {isAdding ? (
-              <span className="flex items-center justify-center gap-2">
-                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                <span className="hidden sm:inline">Adding...</span>
-              </span>
-            ) : (
-              <span className="flex items-center justify-center gap-2">
-                <svg 
-                  className="w-5 h-5" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                </svg>
-                <span className="hidden sm:inline">Add Task</span>
-                <span className="sm:hidden">Add</span>
-              </span>
-            )}
-          </button>
-        </div>
-      </div>
+    <div className="mb-6">
+      <form onSubmit={handleSubmit} className="flex gap-3">
+        <input 
+          type="text"
+          placeholder="Add a new task..." 
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          className="flex-1 p-3 bg-white border border-gray-200 rounded-lg focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400 transition-colors"
+          disabled={isAdding}
+        />
+        
+        <button 
+          type="submit"
+          className={`px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-1 focus:ring-blue-400 disabled:opacity-50 disabled:cursor-not-allowed ${isAdding ? 'animate-pulse' : ''}`}
+          disabled={isAdding || !text.trim()}
+        >
+          {isAdding ? (
+            <span className="flex items-center gap-2">
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              Adding...
+            </span>
+          ) : (
+            <span className="flex items-center gap-2">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+              Add Task
+            </span>
+          )}
+        </button>
+      </form>
     </div>
   );
 };

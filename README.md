@@ -1,67 +1,128 @@
-# DailySpark
+# Todo App
 
-DailySpark is a modern, visually appealing Todo List web app built with React, Redux Toolkit, and Tailwind CSS. It helps you ignite your productivity, one spark at a time ✨.
+A clean and simple todo list application built with React and Redux Toolkit. Stay organized and get things done with an intuitive interface.
 
 ## Features
 
-- **Add, edit, delete, and complete tasks**  
-- **Filter tasks** by status: All, Completed, Pending  
-- **Search tasks** by keyword  
-- **Persistent storage** using localStorage  
-- **Responsive and beautiful UI** with Tailwind CSS  
-- **Progress bar** to visualize your productivity  
+- ✅ **Add Tasks** - Create new tasks with a simple form
+- ✏️ **Edit Tasks** - Click edit to modify existing tasks
+- ✓ **Mark Complete** - Check off completed tasks
+- 🗑️ **Delete Tasks** - Remove tasks you no longer need
+- 🔍 **Search Tasks** - Find tasks quickly with search functionality
+- 🏷️ **Filter Tasks** - View all, pending, or completed tasks
+- 📊 **Progress Tracking** - Visual progress bar showing completion status
+- 📱 **Responsive Design** - Works on desktop and mobile devices
 
-## Screenshots
+## Tech Stack
 
-![DailySpark Screenshot](public/vite.svg)
+- **React** - Frontend library for building user interfaces
+- **Redux Toolkit** - State management with modern Redux patterns
+- **Tailwind CSS** - Utility-first CSS framework for styling
+- **Nanoid** - Unique ID generation for tasks
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v16 or newer)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+Make sure you have Node.js installed on your machine.
 
 ### Installation
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/your-username/dailyspark.git
-   cd dailyspark
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/todo-app.git
+cd todo-app
+```
 
-2. **Install dependencies:**
-    npm install
-    # or
-    yarn install
+2. Install dependencies
+```bash
+npm install
+```
 
-3. **Start the development server:**
-   npm run build
-   # or
-   yarn build
+3. Start the development server
+```bash
+npm start
+```
 
-### Project Structure
-├── public/
-│   └── vite.svg
-├── src/
-│   ├── [App.jsx](http://_vscodecontentref_/0)
-│   ├── [main.jsx](http://_vscodecontentref_/1)
-│   ├── [index.css](http://_vscodecontentref_/2)
-│   ├── assets/
-│   ├── components/
-│   │   ├── [TaskForm.jsx](http://_vscodecontentref_/3)
-│   │   └── [TaskList.jsx](http://_vscodecontentref_/4)
-│   ├── features/
-│   │   └── tasks/
-│   │       └── [taskSlice.js](http://_vscodecontentref_/5)
-│   └── redux/
-│       └── [store.js](http://_vscodecontentref_/6)
-├── [package.json](http://_vscodecontentref_/7)
-├── [vite.config.js](http://_vscodecontentref_/8)
-├── [eslint.config.js](http://_vscodecontentref_/9)
-└── [README.md](http://_vscodecontentref_/10)
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Tech Stack
-   React
-   Redux Toolkit
-   Tailwind CSS
-   Vite
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── TaskForm.jsx       # Form component for adding new tasks
+│   └── TaskList.jsx       # Component for displaying and managing tasks
+├── features/
+│   └── tasks/
+│       └── taskSlice.js   # Redux slice for task management
+├── store/
+│   └── store.js           # Redux store configuration
+├── App.jsx                # Main application component
+└── index.js               # Application entry point
+```
+
+## Redux State Management
+
+The application uses Redux Toolkit for state management with the following actions:
+
+- `addTasks` - Add a new task
+- `editTasks` - Edit an existing task
+- `deleteTasks` - Delete a task
+- `toggleComplete` - Toggle task completion status
+- `setSearchFilter` - Set search filter
+- `setStatusFilter` - Set status filter (all/pending/completed)
+
+## Components
+
+### TaskForm
+- Handles new task creation
+- Input validation
+- Loading states during task addition
+
+### TaskList
+- Displays filtered tasks
+- Progress tracking
+- Search functionality
+- Filter buttons (All, Pending, Completed)
+- Inline editing
+- Task completion toggle
+- Task deletion
+
+## Styling
+
+The application uses a clean, minimal design with:
+- Blue/purple color palette
+- Subtle gradients and shadows
+- Smooth transitions
+- Responsive layout
+- Accessibility-friendly design
+
+## Available Scripts
+
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Design inspiration from modern todo applications
+- Color palette inspired by contemporary UI trends
+- Built with Create React App for easy setup and deployment
+
+---
+
+**Keep it simple, keep it done ✓**
