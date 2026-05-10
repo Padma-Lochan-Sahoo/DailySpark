@@ -6,7 +6,7 @@ A clean and simple todo list application built with React and Redux Toolkit. Sta
 
 ## 🌐 Live Demo
 
-> **[https://daily-spark-mu.vercel.app](https://daily-spark-mu.vercel.app)**
+> **[https://daily-spark-beige.vercel.app](https://daily-spark-beige.vercel.app)**
 
 ---
 
