@@ -2,6 +2,14 @@
 
 A clean and simple todo list application built with React and Redux Toolkit. Stay organized and get things done with an intuitive interface.
 
+---
+
+## 🌐 Live Demo
+
+> **[https://daily-spark-mu.vercel.app](https://daily-spark-mu.vercel.app)**
+
+---
+
 ## Features
 
 - ✅ **Add Tasks** - Create new tasks with a simple form
